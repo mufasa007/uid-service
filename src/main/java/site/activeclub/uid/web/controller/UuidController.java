@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UuidController {
 
-    @GetMapping("/web/uuid/get")
+    @GetMapping("/web/v1/uuid/get")
     public ResponseEntity<UUidResponse> getUuid() {
         return ResponseEntity.ok(new UUidResponse().setCode("0").setMsg(String.valueOf(SnowflakeUuidUtil.getWorkerId())).setData(SnowflakeUuidUtil.nextId()));
     }
