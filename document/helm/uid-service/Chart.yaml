@@ -1,0 +1,9 @@
+apiVersion: v2
+appVersion: "1.0.0"
+version: 1.0.0-2023-11-12
+name: uid-service
+type: application
+description: A distributed id infrastructure service based on the Snowflake
+maintainers:
+  - name: wanyu
+    url: https://www.activeclub.site

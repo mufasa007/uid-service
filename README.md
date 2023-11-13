@@ -6,6 +6,8 @@
 
 ​	一个基于雪花改进型分布式id基础服务
 
+![image-20231113163601177](https://mufasa-blog-images.oss-cn-beijing.aliyuncs.com/2023/image-20231113163601177.png)
+
 ### 1.1，入参样例：
 
 请求路径：GET http://{url}:{port}/web/uuid/get
@@ -21,8 +23,6 @@
 
 
 ### 1.2，反参样例：
-
-![image-20231112144317283](C:\Users\59456\AppData\Roaming\Typora\typora-user-images\image-20231112144317283.png)
 
 ```json
 {
@@ -60,9 +60,26 @@ java -jar app.jar
 
 ### 2.2，Docker
 
+docker.io镜像
+
 ```sh
-docker run -it -d -p 8080:8080 uid-service:latest
+
+docker run -it -d -p 8080:8080 activeclub/uid-service:v1.0.0-jvm-2023-11-12
+
+docker run -it -d -p 8080:8080 activeclub/uid-service:v1.0.0-native-2023-11-12
+
 ```
+
+阿里云mirror镜像：
+
+```sh
+
+docker run -it -d -p 8080:8080 registry.cn-shanghai.aliyuncs.com/activeclub/uid-service:v1.0.0-jvm-2023-11-12
+
+docker run -it -d -p 8080:8080 registry.cn-shanghai.aliyuncs.com/activeclub/uid-service:v1.0.0-native-2023-11-12
+
+```
+
 
 测试：直接在浏览器请求 http://127.0.0.1:8080/web/uuid/get
 
@@ -92,7 +109,7 @@ spec:
       containers:
         - name: uidserver
           imagePullPolicy: IfNotPresent
-          image:  activeclub/public/uid-service:latest
+          image:  activeclub/uid-service:v1.0.0-native-2023-11-12
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
@@ -140,13 +157,37 @@ spec:
 1. k8s-stateful部署时，运行程序的主机名称格式为(xxx-n)，其中n为1~m的不重复数值，m<=n，n为节点个数；因此程序使用主机名称的节点后缀设置为workId
 2. 每个服务内部使用原子类AtomicLong用于确保生产id的唯一性和性能
 3. 使用seata改进型雪花算法来确保每个节点产生的id唯一性
-4. 底层打包使用graalvm native-image，来确保docker容器只有160MB，其中80MB是程序运行，以及启动速度700ms
+4. 底层打包使用GraalVM native-image，来确保docker容器只有160MB，其中80MB是程序运行，以及启动速度700ms
+
+
 
 
 
 ## 4，性能
 
+| 类别                       | JVM     | Native  |
+| -------------------------- | ------- | ------- |
+| 启动耗时（s）              | 2.549   | 0.090   |
+| 资源包压缩后大小（MB）     | 269.68  | 55.38   |
+| 资源包大小（MB）           | 601.62  | 160.72  |
+| 前1s，并发性能（QPS）      | 8441.0  | 11577.4 |
+| 运行30s后，并发性能（QPS） | 15692.1 | 15240.0 |
 
+
+
+测试请求并发线程数：16
+
+
+
+资源包压缩后大小（MB）：
+
+![image-20231113183607968](https://mufasa-blog-images.oss-cn-beijing.aliyuncs.com/2023/image-20231113183607968.png)
+
+
+
+资源包大小（MB）：
+
+![image-20231113195227057](https://mufasa-blog-images.oss-cn-beijing.aliyuncs.com/2023/image-20231113195227057.png)
 
 
 
@@ -171,8 +212,7 @@ spec:
    1. 时间回溯
    2. 自增性
 
-
-
+   
 
 ## 6，参考链接
 
@@ -183,13 +223,5 @@ spec:
 5. [**Leaf** 美团点评分布式ID生成系统](https://www.oschina.net/p/mt-leaf)
 6. [JIT与AOT](https://blog.csdn.net/wdays83892469/article/details/126216765)
 7. [JIT Performance: Ahead-Of-Time versus Just-In-Time](https://www.azul.com/blog/jit-performance-ahead-of-time-versus-just-in-time/)
-8. 
-
-
-
-
-
-
-
-
-
+7. [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
+7. 1[配置存活、就绪和启动探针](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)

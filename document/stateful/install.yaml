@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: uid-service
+spec:
+  serviceName: uid-service
+  replicas: 3
+  selector:
+    matchLabels:
+      app: uid-service
+  template:
+    metadata:
+      labels:
+        app: uid-service
+    spec:
+      containers:
+        - name: uid-service
+          imagePullPolicy: IfNotPresent
+          image: activeclub/uid-service:v1.0.0-native-2023-11-12
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 1
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 1
+            periodSeconds: 10
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uid-service
+spec:
+  selector:
+    app: uid-service
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
