@@ -1,10 +1,10 @@
 package site.activeclub.uid.web.controller;
 
-import site.activeclub.uid.common.utils.SnowflakeUuidUtil;
-import site.activeclub.uid.pojo.vo.UUidResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import site.activeclub.uid.common.utils.SnowflakeUuidUtil;
+import site.activeclub.uid.pojo.vo.UUidResponse;
 
 /**
  * @author wanyu

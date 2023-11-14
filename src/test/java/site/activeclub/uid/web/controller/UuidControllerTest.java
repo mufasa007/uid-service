@@ -4,17 +4,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
-import site.activeclub.uid.ApplicationTests;
 import site.activeclub.uid.common.utils.SnowflakeUuidUtil;
 import site.activeclub.uid.pojo.vo.UUidResponse;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class UuidControllerTest {
 
     @BeforeAll
-    public static void init(){
+    public static void init() {
         SnowflakeUuidUtil.initStartId();
     }
 
@@ -29,7 +28,7 @@ class UuidControllerTest {
     }
 
     private ResponseEntity<UUidResponse> sendGetRequest(String path) {
-        switch (path){
+        switch (path) {
             case "/web/uuid/get":
                 return new UuidController().getUuid();
             default:
