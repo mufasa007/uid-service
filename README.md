@@ -187,9 +187,7 @@ spec:
 
 ## 5，证书
 
-[Apache License 2.0](LICENSE.txt)
-
-
+Apache License 2.0
 
 ## 6，关联知识
 
