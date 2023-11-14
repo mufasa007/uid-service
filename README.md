@@ -63,21 +63,19 @@ java -jar app.jar
 docker.io镜像
 
 ```sh
-
+# jvm模式运行
 docker run -it -d -p 8080:8080 activeclub/uid-service:v1.0.0-jvm-2023-11-12
-
+# native模式运行
 docker run -it -d -p 8080:8080 activeclub/uid-service:v1.0.0-native-2023-11-12
-
 ```
 
 阿里云mirror镜像：
 
 ```sh
-
+# jvm模式运行
 docker run -it -d -p 8080:8080 registry.cn-shanghai.aliyuncs.com/activeclub/uid-service:v1.0.0-jvm-2023-11-12
-
+# native模式运行
 docker run -it -d -p 8080:8080 registry.cn-shanghai.aliyuncs.com/activeclub/uid-service:v1.0.0-native-2023-11-12
-
 ```
 
 
@@ -87,7 +85,7 @@ docker run -it -d -p 8080:8080 registry.cn-shanghai.aliyuncs.com/activeclub/uid-
 
 ### 2.3，K8s
 
-#### 	2.3.1，Stateful.yaml部署
+Stateful.yaml部署
 
 ```yaml
 ---
@@ -146,9 +144,7 @@ spec:
 
 
 
-#### 	2.3.2，Helm部署
-
-
+![image-20231113200623345](https://mufasa-blog-images.oss-cn-beijing.aliyuncs.com/2023/image-20231113200623345.png)
 
 
 
@@ -158,8 +154,6 @@ spec:
 2. 每个服务内部使用原子类AtomicLong用于确保生产id的唯一性和性能
 3. 使用seata改进型雪花算法来确保每个节点产生的id唯一性
 4. 底层打包使用GraalVM native-image，来确保docker容器只有160MB，其中80MB是程序运行，以及启动速度700ms
-
-
 
 
 
