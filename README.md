@@ -217,5 +217,5 @@ spec:
 5. [**Leaf** 美团点评分布式ID生成系统](https://www.oschina.net/p/mt-leaf)
 6. [JIT与AOT](https://blog.csdn.net/wdays83892469/article/details/126216765)
 7. [JIT Performance: Ahead-Of-Time versus Just-In-Time](https://www.azul.com/blog/jit-performance-ahead-of-time-versus-just-in-time/)
-7. [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
-7. 1[配置存活、就绪和启动探针](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+8. [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
+9. [配置存活、就绪和启动探针](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
