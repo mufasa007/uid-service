@@ -2,7 +2,9 @@
 
 ## 1，概述
 
-​ 一个基于雪花改进型分布式id基础服务
+ 一个基于雪花改进型分布式id基础服务
+
+demo地址：http://uid.activeclub.site/web/v1/uuid/get
 
 ![image-20231113163601177](https://mufasa-blog-images.oss-cn-beijing.aliyuncs.com/2023/image-20231113163601177.png)
 
@@ -12,11 +14,11 @@
 
 入参说明：
 
-| 类目            | 字段名         | 说明                          |
-|---------------|-------------|-----------------------------|
-| url           | 对外暴露的ip或者域名 | 本地启动一般为127.0.0.1或者localhost |
-| port          | 对外暴露的端口信息   |                             |
-| /web/uuid/get | 获取唯一id的请求路径 |                             |
+| 类目          | 字段名               | 说明                                 |
+| ------------- | -------------------- | ------------------------------------ |
+| url           | 对外暴露的IP或者域名 | 本地启动一般为127.0.0.1或者localhost |
+| port          | 对外暴露的端口信息   |                                      |
+| /web/uuid/get | 获取唯一id的请求路径 |                                      |
 
 ### 1.2，反参样例：
 
@@ -163,6 +165,8 @@ spec:
 Apache License 2.0
 
 ## 6，关联知识
+
+![image-20231115105032280](https://mufasa-blog-images.oss-cn-beijing.aliyuncs.com/2023/image-20231115105032280.png)
 
 1. java
     1. 原子类
