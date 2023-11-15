@@ -183,12 +183,14 @@ Apache License 2.0
 
 ## 6，参考链接
 
-1. [Seata改进型雪花分布式ID算法-java实现](https://www.cnblogs.com/Mufasa/p/16090888.html)
-2. [java算法(4)---静态内部类实现雪花算法](https://www.cnblogs.com/qdhxhz/p/11372658.html)
-3. [Seata基于改良版雪花算法的分布式UUID生成器分析](https://seata.io/zh-cn/blog/seata-analysis-UUID-generator.html)
-4. [关于新版雪花算法的答疑](https://seata.io/zh-cn/blog/seata-snowflake-explain.html)
-5. [**Leaf** 美团点评分布式ID生成系统](https://www.oschina.net/p/mt-leaf)
-6. [JIT与AOT](https://blog.csdn.net/wdays83892469/article/details/126216765)
-7. [JIT Performance: Ahead-Of-Time versus Just-In-Time](https://www.azul.com/blog/jit-performance-ahead-of-time-versus-just-in-time/)
-8. [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
-9. [配置存活、就绪和启动探针](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+1. [源代码githu地址](https://github.com/mufasa007/uid-service.git)
+2. [dockerhub镜像地址](https://hub.docker.com/r/activeclub/uid-service)
+3. [Seata改进型雪花分布式ID算法-java实现](https://www.cnblogs.com/Mufasa/p/16090888.html)
+4. [java算法(4)---静态内部类实现雪花算法](https://www.cnblogs.com/qdhxhz/p/11372658.html)
+5. [Seata基于改良版雪花算法的分布式UUID生成器分析](https://seata.io/zh-cn/blog/seata-analysis-UUID-generator.html)
+6. [关于新版雪花算法的答疑](https://seata.io/zh-cn/blog/seata-snowflake-explain.html)
+7. [**Leaf** 美团点评分布式ID生成系统](https://www.oschina.net/p/mt-leaf)
+8. [JIT与AOT](https://blog.csdn.net/wdays83892469/article/details/126216765)
+9. [JIT Performance: Ahead-Of-Time versus Just-In-Time](https://www.azul.com/blog/jit-performance-ahead-of-time-versus-just-in-time/)
+10. [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
+11. [配置存活、就绪和启动探针](https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
