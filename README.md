@@ -206,7 +206,7 @@ Apache License 2.0
 
    
 
-## 6，参考链接
+## 7，参考链接
 
 1. [Seata改进型雪花分布式ID算法-java实现](https://www.cnblogs.com/Mufasa/p/16090888.html)
 2. [java算法(4)---静态内部类实现雪花算法](https://www.cnblogs.com/qdhxhz/p/11372658.html)
