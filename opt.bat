@@ -9,8 +9,8 @@ set tagNative=activeclub/%name%:%versionPrefix%-native-%timeStr%
 set tagJvm=activeclub/%name%:%versionPrefix%-jvm-%timeStr%
 set tagLatest=activeclub/%name%:latest
 
-docker build -f build/Dockerfile-native -t %tagNative% .
-docker build -f build/Dockerfile-jvm -t %tagJvm% -t %tagLatest% .
+docker build -f document/docker-build/Dockerfile-native -t %tagNative% .
+docker build -f document/docker-build/Dockerfile-jvm -t %tagJvm% -t %tagLatest% .
 
 docker push %tagNative%
 docker push %tagJvm%
