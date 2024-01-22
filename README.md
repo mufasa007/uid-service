@@ -4,7 +4,7 @@
 
  一个基于雪花改进型分布式id基础服务
 
-demo地址：http://uid.activeclub.site/web/v1/uuid/get
+demo地址：[http://uid.activeclub.site/web/v1/uuid/get](http://dev.activeclub.site/uid/web/v1/uuid/get)
 
 ![image-20231113163601177](https://mufasa-blog-images.oss-cn-beijing.aliyuncs.com/2023/image-20231113163601177.png)
 
